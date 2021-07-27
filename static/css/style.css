@@ -1,0 +1,20 @@
+/* Navbar Heading */
+.text-style {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+    padding-left: 20px;
+}
+
+/* background color on side navbar */
+.sidenav {
+    background-color: #607d8b;
+}
+
+/* color of menu items on side navbar */
+.sidenav li>a {
+    color: white;
+}
+
+/* Heading color on navbar */
+h4 {
+    color: white;
+}
