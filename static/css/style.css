@@ -18,3 +18,10 @@
 h4 {
     color: white;
 }
+
+/* Styling the flased messages */
+.flases h4 {
+    line-height: 3;
+    font-size: 20px;
+
+}

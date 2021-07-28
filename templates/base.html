@@ -69,10 +69,24 @@
     </ul>
   </div>
 
+  <section>
+    <!-- Flash Messages will be displayed -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="row flashes">
+            <div class="h4 center-align blue-grey white-text" style="font-size: 20px;">{{ message }}</div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </section>
 
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
 
-  {% block content %}
-  {% endblock %}
 
   <footer class="page-footer blue-grey">
     <div class="container blue-grey">
