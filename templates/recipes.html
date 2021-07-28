@@ -1,18 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-{% for recipe in recipes %}
-    {{ recipe.recipe_name }}<br>
-    {{ recipe.category_name }}<br>
-    {{ recipe.image_url }}<br>
-    {{ recipe.serves }}<br>
-    {{ recipe.prep_time }}<br>
-    {{ recipe.ingredients }}<br>
-    {{ recipe.method }}<br>
-    {{ recipe.created_by }}<br>
-{% endfor %}
-
 <ul class="collapsible popout">
     {% for recipe in recipes %}
     <li>
@@ -23,9 +11,10 @@
         <div class="collapsible-body">
             <strong>{{ recipe.category_name }}</strong><br>
             <img src={{ recipe.image_url }} alt="" width="300" height="500" class="center"><br>
-            Serves: <strong>{{ recipe.serves }}</strong><br>
-            Prep Time: <strong>{{ recipe.prep_time }}</strong><br>
-            What you need: <strong>{{ recipe.ingredients }}</strong>
+            <strong>Serves:</strong> {{ recipe.serves }}<br>
+            <strong>Prep Time:</strong> {{ recipe.prep_time }}<br>
+            <strong>What you need:</strong> {{ recipe.ingredients }}<br>
+            <p><strong>What to do:</strong></p>
             <p>{{ recipe.method }}</p>
         </div>
     </li>
