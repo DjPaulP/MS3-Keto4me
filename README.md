@@ -1,104 +1,82 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Keto 4 Me</h1>
 
-Welcome DjPaulP,
+Keto 4 Me is a diet recipe website. Everyone knows dieting isn't easy. Recipes are hard to find. Are they tasty enough for you? Will it impact my diet. All questions which people ask themselves when searching the internet.  
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+Keto 4 Me is a website for people who are on the Keto diet. This website is a place where people on the diet can get inspired, search for tasty recipes and post their favourite recipes also to the community on the diet. 
 
-## Gitpod Reminders
+Keto 4 Me is designed to inspire people for tasty meal ideas. Everyone is welcome to create an account and add their Keto recipes. If the user has an account, he/she can add, edit and delete their recipes. 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+This project is the third out of four Milestone Projects in the Full Stack Web Development Program I am attending at The Code Institute.
 
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+**[View the live project here.](https://keto4me.herokuapp.com/)**
 
 ---
 
-Happy coding!
+## Index 
+
+- <a href="#ux">1. User experience (UX)</a>
+  - <a href="#ux-goals">1.1. Project goals</a>
+  - <a href="#ux-stories">1.2 User stories</a>
+  - <a href="#ux-design">1.3 Design</a>
+  - <a href="#ux-architecture">1.4 Information architecture</a>
+  - <a href="#ux-mockup">1.5 Mockup designs</a>
+- <a href="#features">2. Features</a>
+  - <a href="#features-existing">2.1 Existing features</a>
+  - <a href="#features-future">2.2 Features left to implement in the future</a>
+- <a href="#technologies">3. Technologies used</a>
+- <a href="#testing">4. Testing</a>
+- <a href="#deployment">5. Deployment</a>
+- <a href="#credits">6. Credits</a>
+- <a href="#Acknowledge">7. Acknowledge</a>
+- <a href="#Acknowledge">8. Disclaimer</a>
+
+---
+
+<span id="ux"></span>
+
+<h1>1. User experience (UX)</h1>
+
+<span id="ux-goals"></span>
+
+### 1.1 Project goals 
+
+- Making a full-stack site that allows users to manage a common dataset about a particular domain. 
+- Making a full-stack site that uses HTML, CSS, JavaScript, Python+Flask and MongoDB.
+
+- Creating a website that serves as a platform where people can get inspired for keto ideas and where they can share their keto recipes. 
+- Creating a website that is simple to understand and easy to navigate.
+- The users of the website can make use of CRUD (create, read, update and delete) for the recipes listed. 
+
+<span id="ux-stories"></span>
+
+### 1.2 User stories 
+
+**First-time visitor goals:**
+1. As a first time visitor, I want to be able to visit the website on every device, so that I can look at the website on desktop, mobile and tablet. 
+2. As a first time visitor, I want to be able to navigate easily through the website, so I can find everything easily. 
+3. As a first time visitor, I want to see an overview of all recipes, so I can get inspired by all recipes.
+4. As a first time visitor, I want to be able to search recipes by categories, so I can quickly scan the recipes by category. 
+5. As a first time visitor, I want to be able to search recipes based on words, so I can find recipes easily. (For example, I can search the word avocado and all recipes with the ingredient Avovado or avocado in the recipe name will appear.)
+6. As a first time visitor, I want to register an account on the website, so I can share my recipes on Keto 4 Me. 
+
+**Site member goals:** 
+
+All the goals of first-time visitors also apply for site members. There are additional user stories to the site members because they have more access to the website. See the additional user stories below. 
+1. As a site member, I want to add my recipes, so I can share my recipes. 
+2. As a site member, I want to edit my recipes, so I can update information in the recipe.
+3. As a site member, I want to delete my recipes, so I can remove the recipe when it is no longer relevant. 
+4. As a site member, I want to login to my profile, so I have access to my recipes. 
+5. As a site member, I want to logout of my profile, so I am no longer active in a session on the website. 
+
+
+**Admin goals:**
+
+All the goals of the first time visitors and site members also apply for the admin. The admin has additional user stories to manage the categories of the recipes. 
+1. As an admin, I want to add new categories, so I can make the categories clear and manageable. 
+2. As an admin, I want to edit categories, so I can update categories. 
+3. As an admin, I want to delete categories, so I can remove categories when they are no longer relevant. 
+4. I want my users to have a very simple and straight forward approach to my website. 
+5. I want them to be able to easily navigate the website.
+6. I want them to upload their own recipes. The more recipes that are on the website, the more visitors there'll be
+
+<span id="ux-design"></span>
