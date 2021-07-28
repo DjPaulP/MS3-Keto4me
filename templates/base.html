@@ -2,78 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
-        crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    {% block styles %}
-    {% endblock %}
-    <title>Keto 4 Me</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+    crossorigin="anonymous" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  {% block styles %}
+  {% endblock %}
+  <title>Keto 4 Me</title>
 </head>
 
 <body>
 
-    <header>
-        <!-- Top Navbar on website -->
-        <nav class="nav-extended text-style blue-grey">
-            <div class="nav-wrapper">
-                <a href="{{ url_for('get_recipes') }}" class="brand-logo">Keto 4 Me<i class="fas fa-utensils"></i></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">New Recipe</a></li>
-                    <li><a href="#">Manage Categories</a></li>
-                    <li><a href="#">Log Out</a></li>
-                    <li><a href="#">Log In</a></li>
-                    <li><a href="#">Register</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- Mobile Side Navbar -->
-        <ul class="sidenav text-style" id="mobile-demo">
-            <li><h4 class="center-align text-style"><i class="fas fa-utensils"></i> Keto 4 Me</h4></li>
-            <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">New Recipe</a></li>
-            <li><a href="#">Manage Categories</a></li>
-            <li><a href="#">Log Out</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Register</a></li>
-        </ul>
-    </header>
-
-    <div class="slider">
-        <ul class="slides">
-            <!-- Hero Images -->
-          <li>
-            <img src="https://cdn.pixabay.com/photo/2020/09/01/03/00/keto-5534051_960_720.jpg"> 
-          </li>
-          <li>
-            <img src="https://cdn.pixabay.com/photo/2018/03/13/18/30/food-3223286_960_720.jpg">   
-          </li>
-          <li>
-            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spicy-shrimp-burrito-buddha-bowl-with-wild-rice-royalty-free-image-1579707950.jpg"> 
-          </li>
-          <li>
-            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/190430-cheesy-bacon-ranch-chicken-083-copy-1562552391.jpg"> 
-          </li>
+  <header>
+    <!-- Top Navbar on website -->
+    <nav class="nav-extended text-style blue-grey">
+      <div class="nav-wrapper">
+        <a href="{{ url_for('get_recipes') }}" class="brand-logo">Keto 4 Me<i class="fas fa-utensils"></i></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars iconz"></i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">New Recipe</a></li>
+          <li><a href="#">Manage Categories</a></li>
+          <li><a href="#">Log Out</a></li>
+          <li><a href="#">Log In</a></li>
+          <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
       </div>
+    </nav>
+    <!-- Mobile Side Navbar -->
+    <ul class="sidenav text-style" id="mobile-demo">
+      <li>
+        <h4 class="center-align text-style"><i class="fas fa-utensils"></i> Keto 4 Me</h4>
+      </li>
+      <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">New Recipe</a></li>
+      <li><a href="#">Manage Categories</a></li>
+      <li><a href="#">Log Out</a></li>
+      <li><a href="#">Log In</a></li>
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+    </ul>
+  </header>
 
-    {% block content %}
-    {% endblock %}
+  <div class="slider">
+    <ul class="slides">
+      <!-- Hero Images -->
+      <li>
+        <img src="https://cdn.pixabay.com/photo/2020/09/01/03/00/keto-5534051_960_720.jpg">
+      </li>
+      <li>
+        <img src="https://cdn.pixabay.com/photo/2018/03/13/18/30/food-3223286_960_720.jpg">
+      </li>
+      <li>
+        <img
+          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/spicy-shrimp-burrito-buddha-bowl-with-wild-rice-royalty-free-image-1579707950.jpg">
+      </li>
+      <li>
+        <img
+          src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/190430-cheesy-bacon-ranch-chicken-083-copy-1562552391.jpg">
+      </li>
+    </ul>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    {% block scripts %}
-    {% endblock %}
+
+
+  {% block content %}
+  {% endblock %}
+
+  <footer class="page-footer blue-grey">
+    <div class="container blue-grey">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text text-style"><i class="fas fa-utensils"></i> Keto 4 Me</h5>
+          <p class="grey-text text-lighten-4">
+            Your one stop recipe website to help you with delicious ideas to help you on 
+            your weight loss journey. Once you <a href="{{ url_for('register') }}" class="black-text">
+            register</a> you can upload your own creative ideas to share with the world
+          </p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Follow Us!</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/yourketoplan" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/keto.meals.recipe/?hl=en" target="_blank"><i class="fab fa-instagram-square"></i> Instagram</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/channel/UC9DRGV7k0jh5PgRBcM5SVfA" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://twitter.com/ketogenic?lang=en" target="_blank"><i class="fab fa-twitter-square"></i> Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center-align">
+        © 2021 Copyright Paul Prenderville
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  {% block scripts %}
+  {% endblock %}
 </body>
 
 </html>
