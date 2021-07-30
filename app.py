@@ -101,6 +101,12 @@ def logout():
     return redirect(url_for("login")) 
 
 
+@app.route("/add_recipe")
+def add_recipe():
+    # Allow users to add recipes to the website
+    return render_template("add_recipe.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
