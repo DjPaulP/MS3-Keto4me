@@ -3,15 +3,56 @@
 
 <h2 class="center-align white-text blue-grey">Add Recipe</h3>
 
-    <div class="row">
+    <div class="row card-panel">
         <form class="col s12" method="POST" action="">
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-circle prefix"></i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">First Name</label>
+                    <i class="fas fa-utensils prefix blue-grey-text"></i>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
+                        type="text" class="validate" required>
+                    <label for="recipe_name">Name of your Recipe</label>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-image prefix blue-grey-text"></i>
+                        <input id="image_url" name="image_url" minlength="5" maxlength="300" 
+                            type="text" class="validate" required>
+                        <label for="image_url">Paste your image url here</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-friends prefix blue-grey-text"></i>
+                        <input id="serves" name="serves" minlength="1" maxlength="3" 
+                            type="text" class="validate" required>
+                        <label for="serves">How many does this serve</label>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-clock prefix blue-grey-text"></i>
+                            <input id="prep_time" name="prep_time" minlength="4" maxlength="10" 
+                                type="text" class="validate" required>
+                            <label for="prep_time">How long does this take</label>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-bacon prefix blue-grey-text"></i> 
+                        <textarea id="ingredients" name="ingredients" minlength="5" 
+                            class="materialize-textarea validate" required>
+                        </textarea>
+                        <label for="ingredients">Ingredients</label>
+                    </div>
+                </div>    
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-arrow-circle-right prefix blue-grey-text"></i> 
+                        <textarea id="method" name="method" minlength="5" 
+                            class="materialize-textarea validate" required>
+                        </textarea>
+                        <label for="Method">What to do!</label>
+                    </div>
+                </div>
         </form>
     </div>
 
