@@ -6,7 +6,7 @@
 
 <!-- The form wrapped in a card panel -->
     <div class="row card-panel">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
             <!-- select the recipe category using jinja for loop -->
             <div class="row">
                 <div class="input-field col s12">
@@ -72,6 +72,14 @@
                                 required>
                         </textarea>
                             <label for="Method">What to do!</label>
+                        </div>
+                    </div>
+                    <!-- Submit recipe button -->
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <button type="submit" class="btn-large blue-grey text-style">
+                                Add Recipe <i class="fas fa-plus-square right"></i>
+                            </button>
                         </div>
                     </div>
         </form>
