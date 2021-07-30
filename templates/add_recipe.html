@@ -1,58 +1,79 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Headline for Add Recipe page -->
 <h2 class="center-align white-text blue-grey">Add Recipe</h3>
 
+<!-- The form wrapped in a card panel -->
     <div class="row card-panel">
         <form class="col s12" method="POST" action="">
+            <!-- select the recipe category using jinja for loop -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-coffee prefix blue-grey-text"></i>
+                    <select id="category_name" name="category_name" class="validate" required>
+                        <option value="" disabled selected>Choose category for your recipe</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="category_name">Recipe Category</label>
+                </div>
+            </div>
+            <!-- Recipe name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix blue-grey-text"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
-                        type="text" class="validate" required>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
+                        required>
                     <label for="recipe_name">Name of your Recipe</label>
                 </div>
+                <!-- Recipe image url -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-image prefix blue-grey-text"></i>
-                        <input id="image_url" name="image_url" minlength="5" maxlength="300" 
-                            type="text" class="validate" required>
+                        <input id="image_url" name="image_url" minlength="5" maxlength="300" type="text"
+                            class="validate" required>
                         <label for="image_url">Paste your image url here</label>
                     </div>
                 </div>
+                <!-- How many people does this serve -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fas fa-user-friends prefix blue-grey-text"></i>
-                        <input id="serves" name="serves" minlength="1" maxlength="3" 
-                            type="text" class="validate" required>
+                        <input id="serves" name="serves" minlength="1" maxlength="3" type="text" class="validate"
+                            required>
                         <label for="serves">How many does this serve</label>
                     </div>
+                    <!-- How long does it take to make -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-clock prefix blue-grey-text"></i>
-                            <input id="prep_time" name="prep_time" minlength="4" maxlength="10" 
-                                type="text" class="validate" required>
+                            <input id="prep_time" name="prep_time" minlength="4" maxlength="10" type="text"
+                                class="validate" required>
                             <label for="prep_time">How long does this take</label>
                         </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-bacon prefix blue-grey-text"></i> 
-                        <textarea id="ingredients" name="ingredients" minlength="5" 
-                            class="materialize-textarea validate" required>
-                        </textarea>
-                        <label for="ingredients">Ingredients</label>
                     </div>
-                </div>    
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fas fa-arrow-circle-right prefix blue-grey-text"></i> 
-                        <textarea id="method" name="method" minlength="5" 
-                            class="materialize-textarea validate" required>
+                    <!-- What ingredients are needed -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-bacon prefix blue-grey-text"></i>
+                            <textarea id="ingredients" name="ingredients" minlength="5"
+                                class="materialize-textarea validate" required>
                         </textarea>
-                        <label for="Method">What to do!</label>
+                            <label for="ingredients">Ingredients</label>
+                        </div>
                     </div>
-                </div>
+                    <!-- How to make the recipe -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-arrow-circle-right prefix blue-grey-text"></i>
+                            <textarea id="method" name="method" minlength="5" class="materialize-textarea validate"
+                                required>
+                        </textarea>
+                            <label for="Method">What to do!</label>
+                        </div>
+                    </div>
         </form>
     </div>
 
