@@ -33,3 +33,13 @@ h4 {
     height: auto;
   }
 
+/* Styling for Done & Edit Buttons */
+.btn-small {
+    margin: 6px;
+}
+
+/* Stlying strong element in collapsible header */
+.collapsible-header .col strong {
+    margin: 6px;
+    line-height: 45px;
+}
