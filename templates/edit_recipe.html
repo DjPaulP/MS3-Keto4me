@@ -12,9 +12,13 @@
                 <div class="input-field col s12">
                     <i class="fas fa-coffee prefix blue-grey-text"></i>
                     <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Choose category for your recipe</option>
+                        <option value="" disabled>Choose category for your recipe</option>
                         {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% if category.category_name == recipe.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                            {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="category_name">Recipe Category</label>
@@ -24,8 +28,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix blue-grey-text"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
-                        required>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
+                        value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Name of your Recipe</label>
                 </div>
                 <!-- Recipe image url -->
@@ -33,7 +37,7 @@
                     <div class="input-field col s12">
                         <i class="fas fa-image prefix blue-grey-text"></i>
                         <input id="image_url" name="image_url" minlength="5" maxlength="300" type="text"
-                            class="validate" required>
+                            value="{{ recipe.image_url }}" class="validate" required>
                         <label for="image_url">Paste your image url here</label>
                     </div>
                 </div>
@@ -42,7 +46,7 @@
                     <div class="input-field col s12">
                         <i class="fas fa-user-friends prefix blue-grey-text"></i>
                         <input id="serves" name="serves" minlength="1" maxlength="3" type="text" class="validate"
-                            required>
+                            value="{{ recipe.serves }}" required>
                         <label for="serves">How many does this serve</label>
                     </div>
                     <!-- How long does it take to make -->
@@ -50,7 +54,7 @@
                         <div class="input-field col s12">
                             <i class="fas fa-clock prefix blue-grey-text"></i>
                             <input id="prep_time" name="prep_time" minlength="4" maxlength="10" type="text"
-                                class="validate" required>
+                                value="{{ recipe.prep_time }}" class="validate" required>
                             <label for="prep_time">How long does this take</label>
                         </div>
                     </div>
@@ -60,7 +64,8 @@
                             <i class="fas fa-bacon prefix blue-grey-text"></i>
                             <textarea id="ingredients" name="ingredients" minlength="5"
                                 class="materialize-textarea validate" required>
-                        </textarea>
+                                {{- recipe.ingredients -}}
+                            </textarea>
                             <label for="ingredients">Ingredients</label>
                         </div>
                     </div>
@@ -70,6 +75,7 @@
                             <i class="fas fa-arrow-circle-right prefix blue-grey-text"></i>
                             <textarea id="method" name="method" minlength="5" class="materialize-textarea validate"
                                 required>
+                                {{- recipe.method -}}    
                         </textarea>
                             <label for="Method">What to do!</label>
                         </div>
@@ -77,6 +83,10 @@
                     <!-- Submit recipe button -->
                     <div class="row">
                         <div class="col s12 center-align">
+                            <!-- Cancel changes button -->
+                            <a href="{{ url_for('get_recipes') }}" class="btn-large red text-style">
+                                Cancel <i class="fas fa-window-close right"></i>
+                            </a>
                             <button type="submit" class="btn-large blue-grey text-style">
                                 Edit Recipe <i class="fas fa-edit right"></i>
                             </button>
