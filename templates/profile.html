@@ -1,16 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="center-align">Welcome</h2>
+<h2 class="center-align">Welcome {{ username}}</h2>
 
 <div class="row">
     <div class="col s12 m8 offset-m2">
         <div class="card-panel">
             <h3 class="center-align">
-                {{ username }}'s Profile
+                {{ username}}'s Keto 4 Me
             </h3>
-        </div>   
-    </div>    
+            <img src="https://img.taste.com.au/O1OSZ1a7/taste/2019/02/creamy-chicken-bacon-and-cauliflower-bake-p73-147088-3.jpg" class="responsive" height="400px" width="600px" alt="keto fish dish">
+            <p class="center-align blue-grey-text">
+                <strong>
+                    Keto 4 Me is a ketogenic based recipe website for you. We want you to enjoy this website by browsing
+                    our delicous recipes. Try them at home and see if you can make them even better. You've now created
+                    your account so why not upload your own recipes and share them with the world.<br>
+                    To view all of our recipes click <a href="{{ url_for('get_recipes') }}">HERE!</a><br>
+                    To upload your own creation just click <a href="{{ url_for('add_recipe') }}">HERE!</a><br>
+                    ENJOY!
+                </strong>    
+            </p>
+        </div>
+    </div>
+    
+</div>
 
 
 {% endblock %}
