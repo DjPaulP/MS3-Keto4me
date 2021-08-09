@@ -49,3 +49,8 @@ h4 {
     width: 100%;
     height: auto;
 }
+
+.blackline {
+    width: 70%;
+    border: 1px solid;
+}

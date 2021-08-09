@@ -92,13 +92,23 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    # Only users can access profile
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+
     # getting the session's username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-    if session["user"]:
-        return render_template("profile.html", username=username)
-
+    if session["user"]:# Admin has acces to all recipes
+        if session["user"] == "admin":
+            user_recipes = list(mongo.db.recipes.find())
+        else:
+            # user sees own recipes
+            user_recipes = list(
+                mongo.db.recipes.find({"created_by": session["user"]}))
+        return render_template(
+            "profile.html", username=username, user_recipes=user_recipes)
     return redirect(url_for("login"))
 
 
@@ -112,6 +122,10 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    # Only users can add recipes
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+
     # Allow users to add recipes to the website
     if request.method == "POST":
         recipe = {
@@ -134,6 +148,10 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    # Only users can edit recipes
+    if not session.get("user"):
+        return render_template("error_handlers/404.html")
+
     # Allow users to edit their recipes
     if request.method == "POST":
         submit = {
@@ -170,6 +188,10 @@ def get_categories():
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    # Only admin can access categories
+    if not session.get("user") == "admin":
+        return render_template("error_handlers/404.html")
+
     # allow admin to create new categories
     if request.method == "POST":
         category = {
@@ -203,6 +225,22 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("You have successfully deleted the category")
     return redirect(url_for("get_categories"))
+
+
+    # Error Handlers #
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("error_handlers/404.html"), 404
+
+
+@app.errorhandler(500)
+def server_error(e):
+    return render_template("error_handlers/500.html"), 500
+
+
+@app.errorhandler(403)
+def forbidden(e):
+    return render_template("error_handlers/403.html"), 403
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
