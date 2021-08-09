@@ -1,30 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="center-align">Welcome {{ username}}</h2>
-
-<div class="row">
-    <div class="col s12 m8 offset-m2">
-        <div class="card-panel">
-            <h3 class="center-align">
-                {{ username}}'s Keto 4 Me
-            </h3>
-            <img src="https://img.taste.com.au/O1OSZ1a7/taste/2019/02/creamy-chicken-bacon-and-cauliflower-bake-p73-147088-3.jpg" class="responsive" height="400px" width="600px" alt="keto fish dish">
-            <p class="center-align blue-grey-text">
-                <strong>
-                    Keto 4 Me is a ketogenic based recipe website for you. We want you to enjoy this website by browsing
-                    our delicous recipes. Try them at home and see if you can make them even better. You've now created
-                    your account so why not upload your own recipes and share them with the world.<br>
-                    To view all of our recipes click <a href="{{ url_for('get_recipes') }}">HERE!</a><br>
-                    To upload your own creation just click <a href="{{ url_for('add_recipe') }}">HERE!</a><br>
-                    ENJOY!
-                </strong>    
-            </p>
-        </div>
+    <!-- Welcome message -->
+    <div class="row" id="black-row">
+        <h2 class="center-align">Welcome {{ username }} to your profile page</h2>
+        <p class="center-align">
+            This page contains all of the recipes that you upload for easy access to edit them or delete if you so wish.
+        </p>
     </div>
 
-
-</div>
-
+    <!-- Recipes of user -->
+    <div class="row">
+        <div class="col s5 m4 offset-m2">
+            <h5>{{ username }}'s recipes</h5>
+        </div>
+        <div class="col s7 m4 right">
+            <h5><a href="{{ url_for('add_recipe') }}" class="btn blue-grey fas fa-plus">Add new recipe</a></h5>
+        </div>
+        <!-- All recipes of user -->
+        <div class="col s12 m8 offset-m2">
+            <ul class="collapsible">
+                
+                {% for recipe in user_recipes %}
+                
+                <li>
+                    <div class="collapsible-header white-text blue-grey text-style">
+                        <div class="col s3">
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                        <div class="col s9">
+                            <strong>{{ recipe.recipe_name }}</strong>
+                        </div>
+                        
+                    {% if session.user|lower == recipe.created_by|lower %}
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" title="delete" class="btn-small red" onclick="return confirm('Are you sure you want to delete this item')">Delete</a>
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small right light-blue">Edit</a>
+                    {% endif %}
+                    </div>
+                    <div class="collapsible-body">
+                        <strong>{{ recipe.category_name }}</strong><br>
+                        <img src={{ recipe.image_url }} alt="" width="300" height="500" class="center"><br>
+                        <strong>Serves:</strong> {{ recipe.serves }}<br>
+                        <strong>Prep Time:</strong> {{ recipe.prep_time }}<br>
+                        <strong>What you need:</strong> {{ recipe.ingredients }}<br>
+                        <p><strong>What to do:</strong></p>
+                        <p>{{ recipe.method }}</p>
+                        <p><strong>Created By:</strong><em> {{ recipe.created_by }}</em></p>
+                    </div>
+                </li>
+                
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 
 {% endblock %}
