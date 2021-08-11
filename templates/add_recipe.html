@@ -24,9 +24,10 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix blue-grey-text"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
+                    <input id="recipe_name" pattern ="^[^-\s][\w\s-]+$" name="recipe_name" minlength="3" maxlength="50" type="text" class="validate"
                         required>
                     <label for="recipe_name">Name of your Recipe</label>
+                    <span class="helper-text" data-error="enter valid name with no spaces at beginning" data-success="nice">no blank spaces at beginning</span>
                 </div>
                 <!-- Recipe image url -->
                 <div class="row">

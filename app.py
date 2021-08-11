@@ -18,6 +18,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # Home page
 @app.route("/")
 @app.route("/get_recipes")
@@ -47,8 +48,8 @@ def register():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash("Username already exists")  
-            return redirect(url_for("register"))  
+            flash("Username already exists")
+            return redirect(url_for("register"))
 
         register = {
             "username": request.form.get("username").lower(),
@@ -56,7 +57,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        #put the new user into a 'session' cookie on website
+        # put the new user into a 'session' cookie on website
         session["user"] = request.form.get("username").lower()
         flash("Welcome, Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
@@ -79,15 +80,15 @@ def login():
         if existing_user:
             # ensure the password matches the one in the database
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome to Keto 4 Me {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))    
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome to Keto 4 Me {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
             else:
                 # when the password doesn't match
-                flash("Your password and/or Username is incorrect")    
+                flash("Your password and/or Username is incorrect")
                 return redirect(url_for("login"))
 
         else:
@@ -102,13 +103,14 @@ def login():
 def profile(username):
     # Only users can access profile
     if not session.get("user"):
-        return render_template("error_handlers/404.html")
+        return render_template("error_handlers/403.html")
 
     # getting the session's username from the database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-    if session["user"]:# Admin has acces to all recipes
+    if session["user"]:
+        # Admin has access to all recipes
         if session["user"] == "admin":
             user_recipes = list(mongo.db.recipes.find())
         else:
@@ -125,7 +127,7 @@ def logout():
     # Allowing a user to log out of the website
     flash("You have been Logged Out")
     session.pop("user")
-    return redirect(url_for("login")) 
+    return redirect(url_for("login"))
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -175,10 +177,11 @@ def edit_recipe(recipe_id):
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Your recipe has been Edited and Updated, Thank You!")
         return redirect(url_for('get_recipes'))
-    
+
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
+    return render_template(
+        "edit_recipe.html", recipe=recipe, categories=categories)
 
 
 @app.route("/delete_recipe<recipe_id>")
@@ -187,7 +190,6 @@ def delete_recipe(recipe_id):
     if not session.get("user"):
         return render_template("error_handlers/403.html")
 
-    
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash ("Your recipe has successfully been deleted")
     return redirect(url_for('get_recipes'))
@@ -196,7 +198,7 @@ def delete_recipe(recipe_id):
 @app.route("/get_categories")
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
-    return render_template("categories.html", categories=categories)  
+    return render_template("categories.html", categories=categories)
 
 
 @app.route("/add_category", methods=["GET", "POST"])
@@ -222,7 +224,7 @@ def edit_category(category_id):
     # allow admin to edit the categories
     if request.method == "POST":
         submit = {
-            "category_name": request.form.get("category_name")  
+            "category_name": request.form.get("category_name")
         }
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("You have successfully updated the category")
@@ -239,8 +241,9 @@ def delete_category(category_id):
     flash("You have successfully deleted the category")
     return redirect(url_for("get_categories"))
 
-
     # Error Handlers #
+
+
 @app.errorhandler(404)
 def not_found(e):
     return render_template("error_handlers/404.html"), 404
@@ -258,4 +261,4 @@ def forbidden(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)   
+            debug=True)
