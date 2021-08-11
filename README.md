@@ -114,3 +114,19 @@ The images I used for this project came from [Delish](https://www.delish.com//),
         - The category has to be chosen.
         - The number of serves and prepping time has to be numbered.
     - A recipe can't be deleted by just one click. If someone clicks on the delete button, there wil be a pop up with a confirmation if someone is sure to delete the recipe.
+
+#### Interactive design 
+
+    - The website has to be easy to navigate. 
+    - The user can quickly find the information he/she wants to find. 
+
+![Interactive design](readme_images/interactive1.PNG)
+
+<span id="ux-architecture"></span>
+
+### 1.4 Information architecture
+The project has three collections in the database. The database structure in MongoDB is as follows: 
+
+![Information architecture](readme_images/mongodb_wireframe.PNG)
+
+<span id="ux-mockup"></span>
