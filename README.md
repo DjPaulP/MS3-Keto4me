@@ -1,6 +1,8 @@
 <h1 align="center">Keto 4 Me</h1>
 
-Keto 4 Me is a diet recipe website. Everyone knows dieting isn't easy. Recipes are hard to find. Are they tasty enough for you? Will it impact my diet. All questions which people ask themselves when searching the internet.  
+![website on all devices](readme_images/responsive_keto.PNG "Picture of website on all devices")
+
+Keto 4 Me is a diet recipe website. Everyone knows dieting isn't easy. Recipes are hard to find. Are they tasty enough for you? Will it impact my diet? All questions which people ask themselves when searching the internet.  
 
 Keto 4 Me is a website for people who are on the Keto diet. This website is a place where people on the diet can get inspired, search for tasty recipes and post their favourite recipes also to the community on the diet. 
 
@@ -80,3 +82,23 @@ All the goals of the first time visitors and site members also apply for the adm
 6. I want them to upload their own recipes. The more recipes that are on the website, the more visitors there'll be
 
 <span id="ux-design"></span>
+
+### 1.3 Design 
+
+- #### Colour scheme 
+The two colours that are used for the recipe website are very neutral and simple. I have chosen these colours because the colours give a sleek and uncluttered appearance. 
+
+![Colour scheme](readme_images/blue_grey.PNG "Colour used on website") ![Colour scheme](readme_images/white.PNG "Colour used on website") ![Colour scheme](readme_images/black.PNG "Colour used on website")
+
+- **The blue-grey colour** is used for the header, footer background, the flash messages background and the recipes container box. 
+- **The black colour** is used on some of the text headers and also in the recipes. 
+- **The white colour** is used for the majority of the text when it's placed on the blue-grey background giving a very clean and easy to read website
+
+- #### Fonts
+The **Roboto** font is used throughout the whole website. Sans serif is the fallbacks in case the main font isn’t being imported to the site correctly. 
+
+- #### Icons
+In the project, icons are used that are provided by [Font Awesome](https://fontawesome.com/). The Icons that are used have functional purposes such as the hamburger menu and social media icons. 
+
+- #### Images
+The images I used for this project came from [Pexels](https://www.pexels.com/). Images are used for the header on the home page and all the recipes. 

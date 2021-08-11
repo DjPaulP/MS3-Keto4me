@@ -4,11 +4,13 @@
     <!-- Welcome message -->
     <div class="row" id="black-row">
         <h2 class="center-align">Welcome {{ username }} to your profile page</h2>
+        <!-- A different message is displayed to the admin -->
         {% if session.user|lower == "admin"|lower %}
         <p class="center-align">
             This page contains all of the recipes that users have uploaded. You can edit and delete them here. 
         </p>
         {% else %}
+        <!-- Message displayed to users -->
         <p class="center-align">
             This page contains all of the recipes that you upload for easy access to edit them or delete if you so wish.
         </p>
@@ -25,7 +27,7 @@
         </div>
         <!-- All recipes of user -->
         <div class="col s12 m8 offset-m2">
-            <ul class="collapsible">
+            <ul class="collapsible popout">
                 
                 {% for recipe in user_recipes %}
                 
@@ -47,7 +49,7 @@
                         <strong>{{ recipe.category_name }}</strong><br>
                         <img src={{ recipe.image_url }} alt="" width="300" height="500" class="center"><br>
                         <strong>Serves:</strong> {{ recipe.serves }}<br>
-                        <strong>Prep Time:</strong> {{ recipe.prep_time }}<br>
+                        <strong>Prep Time:</strong> {{ recipe.prep_time }} mins<br>
                         <strong>What you need:</strong> {{ recipe.ingredients }}<br>
                         <p><strong>What to do:</strong></p>
                         <p>{{ recipe.method }}</p>
