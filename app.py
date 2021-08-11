@@ -124,7 +124,7 @@ def logout():
 def add_recipe():
     # Only users can add recipes
     if not session.get("user"):
-        return render_template("error_handlers/404.html")
+        return render_template("error_handlers/403.html")
 
     # Allow users to add recipes to the website
     if request.method == "POST":
@@ -150,7 +150,7 @@ def add_recipe():
 def edit_recipe(recipe_id):
     # Only users can edit recipes
     if not session.get("user"):
-        return render_template("error_handlers/404.html")
+        return render_template("error_handlers/403.html")
 
     # Allow users to edit their recipes
     if request.method == "POST":
@@ -175,6 +175,11 @@ def edit_recipe(recipe_id):
 
 @app.route("/delete_recipe<recipe_id>")
 def delete_recipe(recipe_id):
+    # Only users can delete their own recipes
+    if not session.get("user"):
+        return render_template("error_handlers/403.html")
+
+    
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash ("Your recipe has successfully been deleted")
     return redirect(url_for('get_recipes'))
@@ -190,7 +195,7 @@ def get_categories():
 def add_category():
     # Only admin can access categories
     if not session.get("user") == "admin":
-        return render_template("error_handlers/404.html")
+        return render_template("error_handlers/403.html")
 
     # allow admin to create new categories
     if request.method == "POST":
