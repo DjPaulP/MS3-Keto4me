@@ -130,3 +130,8 @@ The project has three collections in the database. The database structure in Mon
 ![Information architecture](readme_images/mongodb_wireframe.PNG)
 
 <span id="ux-mockup"></span>
+
+### 1.5 Wireframe designs
+Wireframe designs are made with [Balsamiq](https://balsamiq.com/)
+
+All wireframes can be view here ![Wireframes](readme_images/wireframes)
