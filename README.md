@@ -95,10 +95,22 @@ The two colours that are used for the recipe website are very neutral and simple
 - **The white colour** is used for the majority of the text when it's placed on the blue-grey background giving a very clean and easy to read website
 
 - #### Fonts
-The **Roboto** font is used throughout the whole website. Sans serif is the fallbacks in case the main font isn’t being imported to the site correctly. 
+The **Sans Serif** font is used throughout the whole website. 
 
 - #### Icons
 In the project, icons are used that are provided by [Font Awesome](https://fontawesome.com/). The Icons that are used have functional purposes such as the hamburger menu and social media icons. 
 
 - #### Images
-The images I used for this project came from [Pexels](https://www.pexels.com/). Images are used for the header on the home page and all the recipes. 
+The images I used for this project came from [Delish](https://www.delish.com//), and also [BBC recipe website](https://www.bbc.co.uk/food/recipes). Images are used on all the recipes and also for the hero image box which rotates 4 images. 
+
+ #### Defensive design 
+
+    - The user is not able to break the site by clicking on buttons. 
+    - The signup form: 
+        - The username has to be between 5-15 characters and only must contain letters and numbers. 
+        - The password has to be between 5-15 characters and only must contain letters and numbers.
+    - The add and edit recipe form:
+     - The recipe name has to be between minumum 5 characters and only must contain letters and numbers
+        - The category has to be chosen.
+        - The number of serves and prepping time has to be numbered.
+    - A recipe can't be deleted by just one click. If someone clicks on the delete button, there wil be a pop up with a confirmation if someone is sure to delete the recipe.
