@@ -1,4 +1,5 @@
 <h1 align="center">Keto 4 Me</h1>
+<span id="keto4me"></span>
 
 ![website on all devices](readme_images/responsive_keto.PNG "Picture of website on all devices")
 
@@ -134,4 +135,200 @@ The project has three collections in the database. The database structure in Mon
 ### 1.5 Wireframe designs
 Wireframe designs are made with [Balsamiq](https://balsamiq.com/)
 
-All wireframes can be viewed here [Wireframes](readme_images/wireframes)
+All wireframes can be viewed below<br>
+PC View
+
+<img src="readme_images/wireframes/home_page.png" width="200"><img src="readme_images/wireframes/input_recipe.png" width="200"><img src="readme_images/wireframes/login_register.png" width="200"><img src="readme_images/wireframes/view_recipe.png" width="200"><img src="readme_images/wireframes/recipe_categories.png" width="200"><br>
+
+Tablet View
+
+<img src="readme_images/wireframes/tablet_home.png" width="200"><img src="readme_images/wireframes/tablet_input_recipe.png" width="200"><img src="readme_images/wireframes/tablet_login_register.png" width="200"><img src="readme_images/wireframes/tablet_recipe.png" width="200"><img src="readme_images/wireframes/tablet_categories.png" width="200"><br>
+
+Mobile View
+
+<img src="readme_images/wireframes/mobile_home.png" width="200"><img src="readme_images/wireframes/mobile_input_recipe.png" width="200"><img src="readme_images/wireframes/mobile_login_register.png" width="200"><img src="readme_images/wireframes/mobile_recipe.png" width="200"><img src="readme_images/wireframes/mobile_category.png" width="200"><br>
+
+<span id="features"></span>
+
+<h1>2. Features</h1>
+
+<span id="features-existing"></span>
+
+### 2.1 Existing features 
+
+#### 1. Design 
+- An attractive and simple layout with consistency.
+- Simple navigation throughout the website by using the navigation bar and side nav on mobile devices. 
+- Showing the recipes simply and clearly
+
+#### 2. General 
+- The home page shows a gallery of 4 rotating images along with all recipes that have been submitted together with simple search function
+- There are links to the social media platforms in the footer of the website.  
+
+#### 3. Recipes
+- Recipes can be created, read, updated and deleted (CRUD) by the users. 
+- People can search for recipes with the search bar. 
+- Users have access to their profile, with an overview of all their recipes submitted with CRUD functionality. 
+- Recipes include ingredients, method, prepping time and serves.
+
+#### 4. Signup, login and logout 
+- People can create a new account on the web application. 
+- People can login with their existing accounts. 
+- People can easily log out.
+- If a person creates a new account, logs in or logs out, a flashed message will appear with the action the person has done. 
+- There are also defenses in place so people cannot force themselves onto a restricted page. 
+
+<span id="features-future"></span>
+
+### 2.2 Features left to implement in the future 
+- Adding a favorite section. Users can favorite a recipe and see them on their favorite page. 
+- On the overview of recipes multiple pages with all recipes, put into their categories, instead of a long list of all recipes. 
+- For an image of the recipe, users have to fill in the image URL. For the future, there also can be an option to upload the image. 
+- Add form validation on the backend.
+- The user can delete their profile.
+
+<span id="technologies"></span>
+
+<h1>3. Technologies used</h1>
+
+#### Languages used
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+    - HTML5 provides the structure and the content for my project. 
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+    - CSS3 provides the style of the HTML5 elements.
+- [jQuery](https://jquery.com/)
+    - jQuery used as the JavaScript functionality.
+- [Python](https://www.python.org/)
+    - Python provides the backend of the project.
+
+#### Frameworks, libraries & Other
+- [Gitpod](https://www.gitpod.io/) 
+    - GitPod is used to develop the project.
+- [Git](https://git-scm.com/)
+    - The Git was used for version control to commit to Git and push to GitHub.
+- [GitHub](https://github.com/)
+    - The GitHub is used to host the project.
+- [Balsamiq](https://balsamiq.com/)
+    - Balsamiq is used to create the wireframe designs for the project.
+- [Materialize](https://materializecss.com/)
+    - Materialize is used for the design framework.
+- [MobgoDB](https://www.mongodb.com/1)
+    - MongoDB is the fully managed cloud database service used for the project.
+- [Heroku](https://dashboard.heroku.com/)
+    - Heroku is the cloud platform to deploy the app.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    - Flask is the web framework used to provide libraries, tools and technologies for the app.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+    - Jinja is used for templating Python
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/)
+    - Werkzeug is used for password hashing authentication and autohorization.
+
+#### Testing tools used 
+- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/open) is used to detect problems and test responsiveness.
+- [W3C Markup Validation Service](https://validator.w3.org/)
+    - The W3C Markup Validation Service is used to check whether there were any errors in the HTML5 code. 
+- [W3C CSS validator](https://jigsaw.w3.org/css-validator/)
+    - The W3C CSS validator is used to check whether there were any errors in the CSS3 code.
+- [JShint](https://jshint.com/)
+    - JShint is a JavaScript validator that is used to check whether there were any errors in the JavaScript code. 
+- [PEP8](http://pep8online.com/)
+    - The PEP8 validator is used to check whether there were any errors in the Python code.
+
+    <h1>4. Testing</h1>
+
+The testing process can be found [here](TESTING.md).
+
+<span id="deployment"></span>
+
+<h1>5. Deployment</h1>
+
+#### Requirements 
+- Python3 
+- Github account 
+- MongoDB account 
+- Heroku account
+
+#### Clone the project 
+To make a local clone, follow the following steps. 
+1. Log in to GitHub and go to the repository. 
+2. Click on the green button with the text **“Code”.**
+3. Click on **“Open with GitHub Desktop”** and follow the prompts in the GitHub Desktop Application or follow the instructions from **[this link](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop)** to see how to clone the repository in other ways. 
+
+#### Working with the local copy
+1. Install all the requirements: Go to the workspace of your local copy. In the terminal window of your IDE type: **pip3 install -r requirements.txt**.
+2. Create a database in MongoDB  
+    - Signup or login to your MongoDB account.
+    - Create a cluster and a database.
+    - Create four collections in the db: **categories, recipes, users.**
+    - Add string values for the collections. See <a href="#ux-architecture">my Information architecture</a> how the database is set up for this project.
+3. Create the environment variables 
+    - Create a .gitignore file in the root directory of the project.
+    - Add the env.py file in the .gitignore.
+    - Create the file env.py. This  will contain all the envornment variables.
+    ```
+    Import os
+    os.environ.setdefault("IP", "Added by developer")
+    os.environ.setdefault("PORT", "Added by developer")
+    os.environ.setdefault("SECRET_KEY", "Added by developer")
+    os.environ.setdefault("MONGO_URI", "Added by developer")
+    os.environ.setdefault("MONGO_DBNAME", "Added by developer")
+    ```
+4. Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
+
+#### Heroku Deployment  
+1. Set up local workspace for Heroku 
+    - In terminal window of your IDE type: **pip3 freeze -- local > requirements.txt.** (The file is needed for Heroku to know which filed to install.)
+    - In termial window of your IDE type: **python app.py > Procfile** (The file is needed for Heroku to know which file is needed as entry point.)
+2. Set up Heroku: create a Heroku account and create a new app and select your region. 
+3. Deployment method 'Github'
+    - Click on the **Connect to GitHub** section in the deploy tab in Heroku. 
+        - Search your repository to connect with it.
+        - When your repository appears click on **connect** to connect your repository with the Heroku. 
+    - Go to the settings app in Heroku and go to **Config Vars**. Click on **Reveal Config Vars**.
+        - Enter the variables contained in your env.py file. it is about: **IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME**
+4. Push the requirements.txt and Procfile to repository. 
+     ```
+    $ git add requirements.txt
+    $ git commit -m "Add requirements.txt"
+
+    $ git add Procfile 
+    $ git commit -m "Add Procfile"
+    ```
+5. Automatic deployment: Go to the deploy tab in Heroku and scroll down to **Aotmatic deployments**. Click on **Enable Automatic Deploys**. By **Manual deploy** click on **Deploy Branch**.
+
+Heroku will receive the code from Github and host the app using the required packages. 
+Click on **Open app** in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
+
+<span id="credits"></span>
+
+<h1>6. Credits</h1>
+
+#### Recipes
+- Cloud Bread - [BBC Food Recipes](https://www.bbcgoodfood.com/recipes/cloud-bread) BBC website. 
+- Keto Hot Chocolate - [Delish.com](https://www.delish.com/cooking/nutrition/a29369044/keto-hot-chocolate-recipe/)
+- Cheesey Bacon Ranch Chicken - [Delish.com](https://www.delish.com/cooking/recipe-ideas/a27156187/cheesy-bacon-ranch-chicken-reipe/)
+- Boursin Stuffed Chicken - [Delish.com](https://www.delish.com/cooking/recipe-ideas/recipes/a45906/boursin-stuffed-chicken-recipe/)
+
+
+#### Media 
+Images used on the website have been taken from [Delish.com](https://www.delish.com/) [The BBC Food Website](https://www.bbc.co.uk/food/recipes)
+
+#### Code
+- [Flask error handling - Python on the web - Learning Flask ep. 18](https://www.youtube.com/watch?v=mBKKZN1MMBM)
+
+<span id="Acknowledge"></span>
+
+<h1>7. Acknowledge</h1>
+
+Thanks to the following people and organizations who helped or inspired me for the project:  
+- The support and guidance of my mentor Precious Ijege. 
+- The lessons and knowledge of [Code Institute.](https://codeinstitute.net/)
+- The advice from Sean at the Tutor Assistance in Code Institute.
+
+<span id="Disclaimer"></span>
+
+<h1>8. Disclaimer</h1>
+This project is for educational purposes only. If there is an issue with the copyright or the content, please contact me: paul@limerickdj.com
+Thanks for visiting
+
+<a href="#keto4me">Back to top!</a>

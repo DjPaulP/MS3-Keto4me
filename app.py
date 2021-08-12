@@ -191,7 +191,7 @@ def delete_recipe(recipe_id):
         return render_template("error_handlers/403.html")
 
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash ("Your recipe has successfully been deleted")
+    flash("Your recipe has successfully been deleted")
     return redirect(url_for('get_recipes'))
 
 
@@ -257,6 +257,7 @@ def server_error(e):
 @app.errorhandler(403)
 def forbidden(e):
     return render_template("error_handlers/403.html"), 403
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
