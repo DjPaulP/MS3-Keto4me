@@ -35,7 +35,15 @@ h4 {
 
 /* Styling for Done & Edit Buttons */
 .btn-small {
-    margin: 6px;
+    margin: 3px;
+}
+
+.probtn {
+    margin: 15px;
+}
+
+nav .nav-wrapper .brand-logo i {
+    float: none;
 }
 
 /* Stlying strong element in collapsible header */

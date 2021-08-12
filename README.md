@@ -182,6 +182,7 @@ Mobile View
 
 ### 2.2 Features left to implement in the future 
 - Adding a favorite section. Users can favorite a recipe and see them on their favorite page. 
+- Change the location of the edit and delete buttons on home page to match profile page.
 - On the overview of recipes multiple pages with all recipes, put into their categories, instead of a long list of all recipes. 
 - For an image of the recipe, users have to fill in the image URL. For the future, there also can be an option to upload the image. 
 - Add form validation on the backend.
@@ -311,10 +312,12 @@ Click on **Open app** in the right corner of your Heroku account. The app wil op
 
 
 #### Media 
-Images used on the website have been taken from [Delish.com](https://www.delish.com/) [The BBC Food Website](https://www.bbc.co.uk/food/recipes)
+Images used on the website have been taken from [Delish](https://www.delish.com/) [The BBC Food Website](https://www.bbc.co.uk/food/recipes) and [Pixabay](https://pixabay.com/)
 
 #### Code
 - [Flask error handling - Python on the web - Learning Flask ep. 18](https://www.youtube.com/watch?v=mBKKZN1MMBM)
+- [w3schools](https://www.w3schools.com/)
+- Tutor Support at Code Institute
 
 <span id="Acknowledge"></span>
 

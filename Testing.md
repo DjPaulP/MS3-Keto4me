@@ -152,7 +152,7 @@ See below the input fields for front end validation
 
 ## 6. Bugs | Solved
 1. When nearing completion users were able to force themselves to login again and register again. This was solved and is no longer the case. 
-2. A bug was found when adding a recipe. The method would indent a number of spaces for input. This was fixed by changing the </textarea> 
+2. A bug was found when adding a recipe. The method would indent a number of spaces for input. This was fixed by changing the textarea closing bracket 
 3. The edit and delete buttons where not appearing inline. Again fixed with the use of divs.
 
 ---

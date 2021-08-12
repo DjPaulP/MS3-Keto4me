@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     type="text/css">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-  <!--<link rel="icon" href="data:;base64,iVBORwOKGO=" /> -->
+  <link rel="icon" href="data:;base64,iVBORwOKGO=" />
   {% block styles %}
   {% endblock %}
   <title>Keto 4 Me</title>
@@ -22,7 +22,7 @@
     <!-- Top Navbar on website -->
     <nav class="nav-extended text-style blue-grey">
       <div class="nav-wrapper">
-        <a href="{{ url_for('get_recipes') }}" class="brand-logo">Keto 4 Me<i class="fas fa-utensils prefix"></i></a>
+        <a href="{{ url_for('get_recipes') }}" class="brand-logo"><i class="fas fa-utensils prefix ico"></i>Keto 4 Me</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars iconz"></i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
