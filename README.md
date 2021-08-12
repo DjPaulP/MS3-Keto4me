@@ -234,9 +234,9 @@ Mobile View
 - [PEP8](http://pep8online.com/)
     - The PEP8 validator is used to check whether there were any errors in the Python code.
 
-    <h1>4. Testing</h1>
+<h1>4. Testing</h1>
 
-The testing process can be found [here](TESTING.md).
+The testing process can be found [here](Testing.md).
 
 <span id="deployment"></span>
 
