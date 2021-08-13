@@ -12,6 +12,7 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+# Config #
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -23,6 +24,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
+    # Shows the recipes #
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
@@ -241,9 +243,8 @@ def delete_category(category_id):
     flash("You have successfully deleted the category")
     return redirect(url_for("get_categories"))
 
-    # Error Handlers #
 
-
+# Error Handlers #
 @app.errorhandler(404)
 def not_found(e):
     return render_template("error_handlers/404.html"), 404
@@ -258,7 +259,7 @@ def server_error(e):
 def forbidden(e):
     return render_template("error_handlers/403.html"), 403
 
-
+# Running the website #
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

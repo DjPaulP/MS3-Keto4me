@@ -42,6 +42,7 @@ h4 {
     margin: 15px;
 }
 
+/* Styling for the Utensils beside the logo */
 nav .nav-wrapper .brand-logo i {
     float: none;
 }
@@ -58,6 +59,7 @@ nav .nav-wrapper .brand-logo i {
     height: auto;
 }
 
+/* Styling for the black line on error pages */
 .blackline {
     width: 70%;
     border: 1px solid;

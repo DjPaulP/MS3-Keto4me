@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Display Recipes -->
 <h2 class="center-align">All Our Delicious Recipes</h2>
 
+<!-- Search Recipes -->
 <div class="row card-panel blue-grey white-text">
     <form action="{{ url_for('search') }}" method="post" class="col s12">
         <div class="row valign-wrapper center-align">
@@ -21,6 +23,7 @@
     </form>
 </div>
 
+<!-- Recipes Displayed -->
 {% if recipes|length > 0 %}
 <ul class="collapsible popout">
     {% for recipe in recipes %}

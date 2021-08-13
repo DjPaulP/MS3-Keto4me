@@ -39,21 +39,32 @@
 <span id="responsiveness"></span>
 
 ## 2. Responsiveness 
-- Responsiveness of the game is tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
+- Responsiveness of the website is tested with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
 - The website is tested on the following devices: 
     - Desktop: 1024px, 1366px, 1440px, 1600px and 1680px. 
     - Mobile & Tablet: Galaxy S5, iPhone 5/SE, iPhone 6/7/8, iPhone 6/7/8 plus, iPhone x, iPad and  iPad Pro
-
+The website funtioned as was intended. The side nav appears when it should and all links and buttons work as should and appear as they were intended when the screen size was reduced. 
 
 ### Notes
-- The Favicon (the logo in next to the title) doesn't work on the profile page, recipes page, recipe pages, edit page and edit category page. I think this has to do with getting data from the db on these pages. I sources a link from w3schools as it was showing an error but when the new link is inserted these all disappear as a simple fix and no error now shows in the console. 
+- The Favicon (the logo I had in next to the title) doesn't work on the profile page, recipes page, recipe pages, edit page and edit category page. I think this has to do with getting data from the db on these pages. I removed the favicon and I sourced a link from w3schools as it was showing an error but when the new link is inserted these all disappear as a simple fix and no error now shows in the console. 
 
 ---
 
 <span id="browser-compatibility"></span>
 
 ## 3. Browser compatibility
+The website was tested on Google Chrome, Firefox and also Safari. 
+There was no compatibility errors. The website functioned as was intended across all browsers. 
+All Links worked correctly. 
+All buttons worked correctly. 
+Users would have the same experience on the website on any browser tested. 
+The website was fully responsive across all browsers also. If the screen was made smaller the side nav always appreared. 
+The website's apprearance did not change on any browser. 
+Conclusion:
+    I am extremely happy that the website worked as intended across all browsers with no known issues to report. 
+
 ![Browser compatibility](readme_images/browser_compatability.PNG)
+
 
 --- 
 
@@ -154,6 +165,7 @@ See below the input fields for front end validation
 1. When nearing completion users were able to force themselves to login again and register again. This was solved and is no longer the case. 
 2. A bug was found when adding a recipe. The method would indent a number of spaces for input. This was fixed by changing the textarea closing bracket 
 3. The edit and delete buttons where not appearing inline. Again fixed with the use of divs.
+4. Another bug was found when the website was viewed on mobile devices, the font awesome icon would place incorrectly beside the website logo. This was fixed by removing the float in css. 
 
 ---
 
